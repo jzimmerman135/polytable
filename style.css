@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Lusitana";
-  src: url("./Lusitana-Regular.ttf") format("truetype");
+  src: url("../polytable/Lusitana-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Lusitana-Bold";
-  src: url("./polytable/Lusitana-Bold.ttf") format("truetype");
+  src: url("../polytable/Lusitana-Bold.ttf") format("truetype");
 }
 
 @font-face {
