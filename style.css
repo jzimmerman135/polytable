@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Lusitana";
-  src: url("/Lusitana-Regular.ttf") format("truetype");
+  src: url("./Lusitana-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Lusitana-Bold";
-  src: url("/Lusitana-Bold.ttf") format("truetype");
+  src: url("./Lusitana-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  src: url("./Inter-VariableFont_slnt\,wght.ttf") format("truetype");
 }
 
 :root {
