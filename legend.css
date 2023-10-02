@@ -1,33 +1,82 @@
-/* @supports (animation-range: 0vh 20vh) {
+@supports (animation-range: 5vh 90vh) {
   @keyframes slide-legend {
     from {
-      top: 250px;
-      left: calc(50% - (50ch / 2));
+      left: 0;
       width: 50ch;
     }
+
     to {
-      left: calc(100vw - var(--legendw) - 70px);
+      width: 25ch;
+      left: calc(100vw - 25ch - 80px);
     }
   }
 
-  @keyframes expand-ghost {
+  @keyframes hide-text {
     from {
-      height: 500px;
+      width: auto;
+      opacity: 1;
+    }
+
+    to {
+      width: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes hide-note {
+    from {
+      opacity: 1;
+      display: auto;
     }
     to {
-      height: ;
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  @keyframes slide-grid {
+    from {
+      grid-template-columns: 35px auto 0fr;
+    }
+    to {
+      grid-template-columns: 35px 0fr auto;
     }
   }
 
   #legend {
     animation: slide-legend linear forwards;
     animation-timeline: scroll();
-    animation-range: 0vh 90vh;
+    animation-range: 10vh 20vh;
   }
-} */
+
+  #legend .full {
+    animation: hide-text linear forwards;
+    animation-timeline: scroll();
+    animation-range: 10vh 12vh;
+  }
+
+  #legend .abbv {
+    animation: hide-text reverse forwards;
+    animation-timeline: scroll();
+    animation-range: 15vh 20vh;
+  }
+
+  #legend .grid {
+    animation: slide-grid linear forwards;
+    animation-timeline: scroll();
+    animation-range: 10vh 20vh;
+  }
+
+  #legend h3::after {
+    animation: hide-note linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0vh 10vh;
+  }
+}
 
 #legend {
   position: sticky;
+  top: 30px;
   --legendw: 50ch;
   width: var(--legendw);
   padding: 20px;
@@ -35,67 +84,99 @@
   z-index: 1;
   border: 1px solid #aaa;
   border-radius: 0.5em;
+  max-height: min-content;
 }
 
 #legend h3 {
+  display: block;
   margin: 0;
   margin-bottom: 20px;
   text-align: left;
 }
 
+#legend h3::after {
+  content: "Hover to highlight";
+  padding-left: 50%;
+  font-size: 0.8em;
+  color: rgba(68, 68, 68, 0.6);
+  font-weight: 400;
+}
+
 #legend .grid {
   display: grid;
-  grid-template-columns: 35px auto;
+  grid-template-columns: 35px auto 0fr;
   grid-gap: 10px;
   align-items: center;
 }
 
+#legend .full {
+  width: 0;
+  text-wrap: nowrap;
+}
+
 #legend .abbv {
-  display: none;
+  width: 0;
+  opacity: 0;
+  text-wrap: nowrap;
 }
 
 #legend .colorbox {
   width: 20px;
   height: 20px;
   margin: 5px 10px;
-  opacity: 0.5;
   border-radius: 0.3em;
   border: 1px solid #444;
   transition: 0.2s;
 }
 
-#legend .colorbox:hover {
-  opacity: 0.7;
+#legend .colorbox,
+#legend .full,
+#legend .abbv {
   cursor: pointer;
 }
 
-/* concepts */
-.concept0 {
-  background-color: rgb(255, 135, 135);
+/* concept colors */
+
+.concept0:hover,
+.concept0.colored,
+.concept0.holdcolor {
+  background-color: rgb(255, 135, 135, 0.6);
 }
 
-.concept1 {
-  background-color: rgb(135, 197, 255);
+.concept1:hover,
+.concept1.colored,
+.concept1.holdcolor {
+  background-color: rgb(135, 197, 255, 0.6);
 }
 
-.concept2 {
-  background-color: rgb(135, 255, 137);
+.concept2:hover,
+.concept2.colored,
+.concept2.holdcolor {
+  background-color: rgb(135, 255, 137, 0.6);
 }
 
-.concept3 {
-  background-color: rgb(255, 191, 135);
+.concept3:hover,
+.concept3.colored,
+.concept3.holdcolor {
+  background-color: rgb(255, 191, 135, 0.6);
 }
 
-.concept4 {
-  background-color: rgb(243, 255, 135);
+.concept4:hover,
+.concept4.colored,
+.concept4.holdcolor {
+  background-color: rgb(243, 255, 135, 0.6);
 }
 
-.concept5 {
-  background-color: rgb(135, 255, 253);
+.concept5:hover,
+.concept5.colored,
+.concept5.holdcolor {
+  background-color: rgb(135, 255, 253, 0.6);
 }
 
-.concept6 {
-  background-color: rgb(189, 135, 255);
+.concept6:hover,
+.concept6.colored,
+.concept6.holdcolor {
+  background-color: rgb(189, 135, 255, 0.6);
 }
 
 .legend-item:not(:last-child) {

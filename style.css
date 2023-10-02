@@ -1,10 +1,24 @@
 @font-face {
+  font-family: "Lusitana";
+  src: url("/Lusitana-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lusitana-Bold";
+  src: url("/Lusitana-Bold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Inter";
-  src: url("/Inter-VariableFont_slnt\,wght.ttf");
+  src: url("/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
 }
 
 :root {
-  font-family: "Inter", sans-serif;
+  font-family: "Lusitana", sans-serif;
+}
+
+strong {
+  font-family: "Lusitana-Bold", sans-serif;
 }
 
 body {
@@ -33,6 +47,7 @@ p {
 }
 
 #content {
+  transition: 0.2s;
   position: relative;
   padding: 20px;
   width: min-content;
@@ -42,4 +57,13 @@ p {
   background: #eee;
   border-radius: 1em;
   padding: 20px;
+}
+
+.note p,
+p.note {
+  text-indent: 0%;
+}
+
+li {
+  margin: 2px;
 }
