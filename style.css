@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Lusitana";
-  src: url("../polytable/Lusitana-Regular.ttf") format("truetype");
+  src: url("./Lusitana-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Lusitana-Bold";
-  src: url("../polytable/Lusitana-Bold.ttf") format("truetype");
+  src: url("./Lusitana-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -15,7 +15,6 @@
 
 :root {
   font-family: "Lusitana", sans-serif;
-  font-size: 1.1rem;
 }
 
 strong {
