@@ -67,3 +67,7 @@ p.note {
 li {
   margin: 2px;
 }
+
+#legend {
+  display: none;
+}
